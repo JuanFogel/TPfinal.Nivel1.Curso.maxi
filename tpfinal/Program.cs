@@ -8,8 +8,8 @@
         // c. El menor de los números primos.
         // Nota: evaluar el uso de una función que analice si un número dado es primo o no y que devuelva true o false según corresponda.
 
-        int n = 0;
-        int mayor = 0;
+        int n;
+        int mayorPar = 0;
         int contImp = 0;
         int menorPrimo = 0;
         bool banPar = false;
@@ -26,11 +26,11 @@
             if (n % 2 == 0)
                 if (banPar == false)
                 {
-                    mayor = n;
+                    mayorPar = n;
                     banPar = true;
                 }
-                else if (n > mayor)
-                    mayor = n;
+                else if (n > mayorPar)
+                    mayorPar = n;
 
             if (n % 2 == 1)
                 contImp++;
@@ -48,16 +48,16 @@
             }
 
         }
-        Console.WriteLine("El mayor de los numeros pares es: " + mayor);
+        Console.WriteLine("El mayor de los numeros pares es: " + mayorPar);
         Console.WriteLine("La cantidad de numeros impares es: " + contImp);
         Console.WriteLine("El menor de los numeros primos es: " + menorPrimo);
     }
-    static bool primo(int a)
+    static bool primo(int num)
     {
         int con = 0;
-        for (int x = 1; x <= a; x++)
+        for (int x = 1; x <= num; x++)
         {
-            if (a % x == 0)
+            if (num % x == 0)
                 con++;
         }
         if (con == 2)
